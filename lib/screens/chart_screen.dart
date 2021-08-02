@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import '../route_aware_state.dart';
 
 class ChartScreen extends StatefulWidget {
-  const ChartScreen({Key? key}) : super(key: key);
+  const ChartScreen();
 
   @override
   _ChartScreenState createState() => _ChartScreenState();

@@ -5,12 +5,13 @@ import 'package:provider/provider.dart';
 
 abstract class RouteAwareState<T extends StatefulWidget> extends State<T>
     with RouteAware, AfterLayoutMixin<T> {
-  RouteObserver<PageRoute>? routeObserver;
+  late RouteObserver<PageRoute>? routeObserver;
   bool enteredScreen = false;
 
   // use `afterFirstLayout()`, because we should wait for
   // the `initState() completed before getting objects from `context`
   @override
+  // add @mustCallSuper annotation to prevent being overridden
   @mustCallSuper
   void afterFirstLayout(BuildContext context) {
     if (mounted) {
